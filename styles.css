@@ -1,0 +1,100 @@
+/* PENTING: Body harus berdiri sendiri di luar */
+body {
+    background-color: #1a1a1a; /* Latar belakang gelap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.music-player {
+    background: rgba(20, 20, 20, 0.6); /* Efek kaca */
+    backdrop-filter: blur(0px);
+    border-radius: 30px;
+    padding: 20px;
+    height: 500px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #F0F8FF; /* SEKARANG PASTI BERFUNGSI */
+}
+
+.album-art {
+    width: 100%;
+    display: flex;            /* Mengaktifkan sistem kotak fleksibel */
+    justify-content: center;   /* Menarik gambar tepat ke tengah secara horizontal */
+    align-items: center;       /* Menarik gambar tepat ke tengah secara vertikal */
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.album-art img {
+    width: 270px;             /* Atur ukuran lebar foto di sini */
+    height: 280px;            /* Samakan tinggi dan lebar agar kotak sempurna */
+    object-fit: cover;        /* Agar foto tidak gepeng/lonjong */
+    border-radius: 25px;      /* Lengkungan sudut foto */
+    display: block;           /* Menghilangkan sela kosong di bawah gambar */
+}
+.song-info .uploader { font-size: 12px; opacity: 0.6; margin: 0; }
+.song-info .song-title { font-size: 18px; margin: 5px 0; font-weight: bold; }
+.song-info .artist { font-size: 14px; opacity: 0.6; }
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    flex: 1;
+    margin: 0 10px;
+    accent-color: #DCDCDC;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.btn-play {
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #696969;
+}
+
+.btn-side {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #D3D3D3;
+    opacity: 0.8;
+}
+
+.glow-bg {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    /* Gunakan warna yang sangat kontras */
+    background: radial-gradient(circle, #ff00ea, #00ffcc, #004cff); 
+    filter: blur(50px); /* Blur jangan terlalu besar (80px terlalu pudar) */
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.5;
+    mix-blend-mode: screen; /* Ini rahasia agar cahaya terlihat menyatu dengan background */
+}
+/* Container untuk menampung glow dan player */
+.player-container {
+    position: relative; /* Kunci agar glow tidak lari */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 340px;
+}
